@@ -12,10 +12,24 @@
 - [프로그래머스](https://programmers.co.kr/)
 <br />
 
+## OT
+- 인텔리제이 설치
+- D2Coding font
+- repository fork
+- branch
+- 각자 패키지 폴더 생성
+- 유튜브 채널
+- README.MD 작성
+- 스터디 방식 논의
+- 단축키
+- auto import
+- 백준 환경 세팅 - solved.ac 
+- 백준 문제 제출 시 format
 
+<br />
 
 ## 이번 주 정기 스터디 시간에 풀 문제
-##### 매주 화요일 업데이트!
+##### 매주 월요일 업데이트!
 - 백준 11399 ATM
 - 백준 13305 주유소
 
@@ -30,7 +44,7 @@
 <br />
 
 ## 4월의 목표
-- 교재 - PART 02 한 chapter씩 
+- 교재 -  PART 02 한 chapter씩 
 - 백준 - 교재 파트 따라서 단계별로 풀어보기 진행
 - 프로그래머스 - Lv.1 하루 2문제
 
@@ -40,7 +54,7 @@
 <table>
  <tr>
     <td>진행 기간</td>
-    <td>2023.03.30 ~</td>
+    <td>2023.03.31 ~</td>
   </tr>
   <tr>
     <td>정기 스터디 시간</td>
@@ -52,7 +66,7 @@
 
 |주차|날짜|Chapter|백준|
 |---|---|---|---|
-|Week00|2023.03.30|OT| |
+|Week00|2023.03.31|OT| |
 |Week01|2023.04.04 ~ 2023.04.10|03 그리디|그리디 알고리즘|
 <br/>
 
@@ -61,13 +75,12 @@
 - 정기 스터디 시간에 2문제 각자 풀기
 - 다 푼 후 자신이 푼 알고리즘 방식 설명(2 ~ 3명)
 - 교재 내용 순서대로 한 주에 한 챕터 진행
-- 월요일까지 PR
+- 일요일까지 PR
 <br />
 
 ## 백준 제출 시 포맷
 > 자바 입출력 포맷 예시
 ```java
-import java.util.Scanner;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -95,11 +108,6 @@ public class Main {
     
     
     public static void main(String[] args) throws IOException {
-        // 일반적인 입력
-        Scanner sc = new Scanner(System.in);
-        int x = sc.nextInt();
-        
-        // 시간 초과를 대비한 입력
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
         StringTokenizer st = new StringTokenizer(br.readLine()); // 한 줄씩 입력(br.readLine()) -> String
@@ -112,11 +120,6 @@ public class Main {
         
         
         String s = "abc";
-        
-        // 일반적인 출력
-        System.out.println(s); // abc
-        
-        // 시간 초과를 대비한 출력
         bw.write(s + "\n"); // String으로 출력,줄바꿈 필요 시 "\n"
         // 출력 결과
         // a
@@ -132,16 +135,8 @@ public class Main {
 ```python
 import sys
 
-// 일반적인 입력
-n, m = map(int, input().split())
-
-// 시간 초과를 대비한 입력
 input = sys.stdin.readline
 n, m = map(int, input().split())
-
-
-// 출력
-print()
 ```
 <br />
 
