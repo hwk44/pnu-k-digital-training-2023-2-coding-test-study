@@ -9,8 +9,21 @@
 - 강의 - 거스름돈, 1될때까지, 곱하기 or 더하기, 큰 수의 법칙, 모험가길드
 <br />
 <br />
+
+## 프로그래머스
 ### LV1.로또최고최저 Map 순회 시  NullPointerException 방지
     - test case 에 0, 1 이 올 경우도 대비하여 맵에 넣어준다
+
+## 백준
+### _11047_동전0 런타임 에러 NumberFormatException - 미결
+    - 10만 자리수를 long 으로 받으려 해도 NumberFormatException.
+    - BingInteger 로 되는지 알아보기
+### _1541_잃어버린괄호 index 에러
+    - test case 마다 배열 크기가 다르므로 예외처리 line 30
+### _11047_동전0
+    - 동전하나로 딱 나누어 떨어질때 예외 처리 line 24
+
+
 ```java
 import java.util.HashMap;
 import java.util.Map;
