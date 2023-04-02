@@ -10,8 +10,14 @@
 <br />
 <br />
 ### LV1.로또최고최저 Map 순회 시  NullPointerException 방지
+    - test case 에 0, 1 이 올 경우도 대비하여 맵에 넣어준다
 ```java
- Map<Integer, Integer> rank  = new HashMap<>(); // 맞춘 갯수 : 랭크
+import java.util.HashMap;
+import java.util.Map;
+
+public class 로또최고최저 {
+    public static void main(String[] args) {
+        Map<Integer, Integer> rank = new HashMap<>(); // 맞춘 갯수 : 랭크
         rank.put(6,1);
         rank.put(5,2);
         rank.put(4,3);
@@ -19,4 +25,8 @@
         rank.put(2,5);
         rank.put(1,6); // NullPointerException 때문에 
         rank.put(0,6); // 2개 추가
+
+     }
+    }
+
 ```
