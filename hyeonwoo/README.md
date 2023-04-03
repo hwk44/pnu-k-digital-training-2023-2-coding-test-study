@@ -13,11 +13,11 @@
 ## 프로그래머스
 ### LV1.로또최고최저 Map 순회 시  NullPointerException 방지
     - test case 에 0, 1 이 올 경우도 대비하여 맵에 넣어준다
-### LV1.둘만의 암호
+### LV1.둘만의 암호 - 미결
     - char 아스키 코드값으로 풀려하는데 z에서 인덱스 초과하는 부분..
 
 ## 백준
-### _11047_동전0 런타임 에러 NumberFormatException - 미결
+### _10610_30 런타임 에러 NumberFormatException - 미결
     - 10만 자리수를 long 으로 받으려 해도 NumberFormatException.
     - BingInteger 로 되는지 알아보기
 ### _1541_잃어버린괄호 index 에러
