@@ -6,29 +6,33 @@ public class 둘만의암호 {
      그리고 자연수 index 가 주어질 때, */
 
     public static void main(String[] args) {
-        String s = "afhoy";
+        String s = "a";
         String skip = "xbczq";
         int index = 20;
 
         char[] ch_s = s.toCharArray();
         for (int i = 0; i < ch_s.length; i++) {
-            while(true) {
+            int cnt= 0;
+            while(cnt != index) {
                 if (ch_s[i] > 'z') ch_s[i] = (char) (int)(ch_s[i] - 26);
-                for (int j = 0; j < index; j++) {
-                    if (!skip.contains(String.valueOf(ch_s[i]))) // 스킵 안해도 되면
-                    ch_s[i] = (char)((int) ch_s[i] + 1);
-                    else ch_s[i] = (char)((int) ch_s[i] + 2);
-                    if(j == index-1) break;
+
+                do {
+                    if (!skip.contains(String.valueOf(ch_s[i]))) { // 스킵 안해도 되면
+                        ch_s[i] = (char) ((int) ch_s[i] + 1);
+                        cnt ++;
+                    }
+                    else ch_s[i] = (char)((int) ch_s[i] + 1); // 스킵해야하면 카운트 하지말기
+                }while(!skip.contains(String.valueOf(ch_s[i])));
+
                 }
             }
-        }
+
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < ch_s.length; i++) {
             sb.append(ch_s[i]);
         }
         System.out.println(sb.toString());
 
-//        System.out.println(solution(s,skip,index));
 
     }
     public static String solution(String s, String skip, int index) {

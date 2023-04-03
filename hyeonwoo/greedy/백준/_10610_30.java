@@ -24,13 +24,14 @@ public class _10610_30 {
         // 큰수가 먼저 되어야하고 0 이 맨 뒤로 와야하고(10의 배수)
         // 모든 자릿수의 합이 3의 배수여야 함 (3의 배수)
         long result = -1;
+        if (!s.contains("0")) System.out.println(result);
         while(s.contains("0")){ // "0" 이 있어야함. 10배수 확인
             char[] ch = s.toCharArray();
             long sum = 0; // 3배수 확인하는 정수
             for (Character c: ch ) {
                 sum += Character.getNumericValue(c);
             }
-            System.out.println("sum = " + sum);
+//            System.out.println("sum = " + sum);
             if((sum % 3) != 0) {
                 System.out.println(result);
                 break; // 3 배수 아니면 탈출
@@ -42,9 +43,9 @@ public class _10610_30 {
             for (int i = ch.length-1; i >= 0 ; i--) { // 배열 뒤에서부터 sb에 append
                 sb.append(ch[i]);
             }
-            System.out.println(BigInteger.valueOf(Long.valueOf(sb.toString())));
+//            System.out.println(BigInteger.valueOf(Long.valueOf(sb.toString())));
 //            result = Long.valueOf(sb.toString());
-//            System.out.println(sb.toString());
+            System.out.println(sb.toString());
             break;
         }
     }
