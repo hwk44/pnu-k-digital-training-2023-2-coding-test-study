@@ -21,8 +21,8 @@
 
 ## 이번 주 정기 스터디 시간에 풀 문제
 ##### 매주 화요일 업데이트!
-- 백준 11399 ATM
-- 백준 13305 주유소
+- [백준 1026 보물](https://www.acmicpc.net/problem/1026)
+- [백준 13305 주유소](https://www.acmicpc.net/problem/13305)
 
 <br />
 
