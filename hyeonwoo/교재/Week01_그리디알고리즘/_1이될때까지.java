@@ -1,4 +1,4 @@
-package greedy;
+package 교재.Week01_그리디알고리즘;
 
 public class _1이될때까지 {
     /*

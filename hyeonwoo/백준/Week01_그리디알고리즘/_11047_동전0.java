@@ -1,4 +1,4 @@
-package greedy.백준;
+package 백준.Week01_그리디알고리즘;
 
 import java.util.Scanner;
 

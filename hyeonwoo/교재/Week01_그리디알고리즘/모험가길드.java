@@ -1,4 +1,4 @@
-package greedy;
+package 교재.Week01_그리디알고리즘;
 
 import java.util.Arrays;
 import java.util.Scanner;

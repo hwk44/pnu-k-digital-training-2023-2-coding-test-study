@@ -1,4 +1,4 @@
-package greedy;
+package 교재.Week01_그리디알고리즘;
 
 public class 거스름돈문제 {
 /*
