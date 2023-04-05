@@ -1,8 +1,6 @@
 package programmers.LV1._4_4;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class 실패율 {
 
@@ -29,18 +27,43 @@ public class 실패율 {
             }
             answer[i-1] = (double) cnt/pass;
         }
-        for (double i : answer) {
-            System.out.println(i);
+//        for (double i : answer) {
+//            System.out.println(i);
+//        }
+        Map<Integer, Double> map = new HashMap<>();
+
+        for (int i = 0; i < answer.length; i++) {
+            map.put(i+1, answer[i]);
+        }
+        List<Map.Entry<Integer, Double>> list = new ArrayList<>(map.entrySet());
+//        list.sort(Map.Entry.comparingByKey());
+        Collections.sort(list, new Comparator<Map.Entry<Integer, Double>>() {
+            @Override
+            public int compare(Map.Entry<Integer, Double> o1, Map.Entry<Integer, Double> o2) {
+                if (o2.getValue().equals(o1.getValue())){
+                    return o1.getKey().compareTo(o2.getKey()); // 키를 기준으로 오름차순 정렬
+                }
+                return o2.getValue().compareTo(o1.getValue()); // 내림차순 정렬
+            }
+        });
+
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i).getKey());
+        }
+        System.out.println("-------------------------");
+        int [] a = new int[n];
+        for (int i = 0; i < list.size(); i++) {
+            a[i] = list.get(i).getKey();
+            System.out.println(a[i]);
         }
 
 
-
-
-        return null;
+        return a;
     }
     public static void main(String[] args) {
-        int n = 5;
-        int[] stages = {2, 1, 2, 6,2,4,3,3};
-        solution(5,stages);
+        int n = 4;
+//        int[] stages = {2, 4, 5, 4,6,1, 2, 6,2,4,3,3};
+        int[] stages = {4,4,4,4,4};
+        solution(n,stages);
     }
 }

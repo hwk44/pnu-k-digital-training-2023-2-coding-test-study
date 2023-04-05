@@ -10,7 +10,9 @@ public class _1931_회의실배정 {
      각 회의 I에 대해 시작시간과 끝나는 시간이 주어져 있고, 각 회의가 겹치지 않게 하면서 회의실을 사용할
       수 있는 회의의 최대 개수를 찾아보자. 단, 회의는 한번 시작하면 중간에 중단될 수 없으며 한 회의가
        끝나는 것과 동시에 다음 회의가 시작될 수 있다.
-    회의의 시작시간과 끝나는 시간이 같을 수도 있다. 이 경우에는 시작하자마자 끝나는 것으로 생각하면 된다.*/
+    회의의 시작시간과 끝나는 시간이 같을 수도 있다. 이 경우에는 시작하자마자 끝나는 것으로 생각하면 된다.
+
+    */
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -19,12 +21,13 @@ public class _1931_회의실배정 {
 //        int[][] nums = new int[n][2];
 //        Arrays.sort(nums);
 
-        List<int[]> list2 = new ArrayList<>(n);
+        List<int[]> list2 = new ArrayList<>();
         for (int i = 0; i < n; i++) {
             int x = sc.nextInt();
             int y = sc.nextInt();
-            list2.get(i)[0] = x;
-            list2.get(i)[1] = y;
+            int[] temp = {x, y};
+//            list2.add(i)[0] = x;
+            list2.add(temp);
         }
 
         // 정렬
@@ -43,49 +46,47 @@ public class _1931_회의실배정 {
             
         }
 
-        List<time> list = new ArrayList<>(n);
-        for (int i = 0; i < n; i++) {
-            int x = sc.nextInt();
-            int y = sc.nextInt();
-            list.add(new time(x, y));
-        }
-        Collections.sort(list, new Comparator<time>() {
-            // x값 기준 오름차순 정렬
-            // x값 같으면 y 기준 오름차순 정렬
-            @Override
-            public int compare(time o1, time o2) {
-                if (o1.getX() == o2.getX()) {
-                    return o1.getY() - o2.getY();
-                }
-                return o1.getX() - o2.getX();
-            }
-        });
+//        List<time> list = new ArrayList<>(n);
+//        for (int i = 0; i < n; i++) {
+//            int x = sc.nextInt();
+//            int y = sc.nextInt();
+//            list.add(new time(x, y));
+//        }
+//        Collections.sort(list, new Comparator<time>() {
+//            // x값 기준 오름차순 정렬
+//            // x값 같으면 y 기준 오름차순 정렬
+//            @Override
+//            public int compare(time o1, time o2) {
+//                if (o1.getX() == o2.getX()) {
+//                    return o1.getY() - o2.getY();
+//                }
+//                return o1.getX() - o2.getX();
+//            }
+//        });
 
-        for (int i = 1; i < list.size(); i++) {
-            if (list.get(i).getX() == list.get(i - 1).getX() &&
-                    list.get(i).getY() >= list.get(i - 1).getY()) {
-                list.remove(list.get(i));
-            }
-        }
-        int max = 0;
-        for (int i = 0; i < list.size(); i++) {
-            Stack<time> st = new Stack<>();
-            st.push(list.get(i));
+//        for (int i = 1; i < list.size(); i++) {
+//            if (list.get(i).getX() == list.get(i - 1).getX() &&
+//                    list.get(i).getY() >= list.get(i - 1).getY()) {
+//                list.remove(list.get(i));
+//            }
+//        }
+//        int max = 0;
+//        for (int i = 0; i < list.size(); i++) {
+//            Stack<time> st = new Stack<>();
+//            st.push(list.get(i));
+//
+//            for (int j = i + 1; j < list.size(); j++) {
+//                if (list.get(j).getX() >= st.peek().getY()) {
+//                    st.push(list.get(j));
+//                }
+//            }
+//
 
-            for (int j = i + 1; j < list.size(); j++) {
-                if (list.get(j).getX() >= st.peek().getY()) {
-                    st.push(list.get(j));
-                }
-
-            }
 //            System.out.println("stack size = " + st.size());
-            if(st.size() > max)  max = st.size();
+//            if(st.size() > max)  max = st.size();
         }
-        System.out.println(max);
 
-    }
-
-    static class time {
+    public class time {
         int x;
         int y;
 
