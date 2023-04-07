@@ -35,16 +35,21 @@ public class _1931_회의실배정 {
             @Override
             public int compare(int[] o1, int[] o2) {
                 if(o1[0] == o2[0]) {
-                    return o1[0] - o1[1];
+                    return o1[1] - o2[1];
                 }
                 return o1[0] - o2[0];
             }
         });
-        
-        // 중복제거
-        for (int i = 0; i <list2.size() ; i++) {
-            
+
+        for (int i = 0; i < list2.size(); i++) {
+            System.out.print(list2.get(i)[0] + " ");
+            System.out.println(list2.get(i)[1]);
         }
+        
+//        // 중복제거
+//        for (int i = 0; i <list2.size() ; i++) {
+//
+//        }
 
 //        List<time> list = new ArrayList<>(n);
 //        for (int i = 0; i < n; i++) {
