@@ -32,25 +32,49 @@ public class _1339_단어수학 {
             @Override
             public int compare(String o1, String o2) {
                 if (o1.length() == o2.length()) { // 길이가 같으면 맨 앞 글자만 확인
-                    return (int)o1.charAt(0) - (int) o2.charAt(0);
+                    return o1.compareTo(o2); // 앞 자리 같으면 사전 순으로
                 }
                 return o2.length() - o1.length();
             }
         });
 
+//        for (int i = 0; i < strings.size(); i++) {
+//            System.out.println(strings.get(i));
+//        }
         Map<Character, Integer> map = new HashMap<>();
 
+        int idx = strings.get(0).length(); // 제일 자릿수가 큰 문자열의 자릿수 ex. 5 자리면 5
+
+        int a = 99999999*10;
         int val = 9;
-        for (int i = 0; i < strings.size(); i++) {
-//            if (strings.get(i+1))
-            for (int j = 0; j < strings.get(i).length(); j++) { // 각 단어 Character 순회
+        int result =0;
+        while (idx >= 1){
+            for (int i = 0; i < strings.size(); i++) {
 
-                if(!map.containsKey(strings.get(i).charAt(j))) { // 맵에 없으면 넣기
-                    map.put(strings.get(i).charAt(j), val--);
+                if(idx > strings.get(i).length()) continue;
+                if(!map.containsKey(strings.get(i).charAt(strings.get(i).length()-idx))) {
+                            map.put(strings.get(i).charAt(strings.get(i).length()-idx), val-- );
                 }
-
+//                result += Math.pow(map.get(strings.get(i).charAt(strings.get(i).length() - idx)),idx);
+                result += map.get(strings.get(i).charAt(strings.get(i).length()-idx)) * Math.pow(10,idx-1);
+//                if(idx == 0 && i == 0) break;
             }
+            idx--;
+
         }
+        System.out.println(result);
+
+//        int val = 9;
+//        for (int i = 0; i < strings.size(); i++) {
+////            if (strings.get(i+1))
+//            for (int j = 0; j < strings.get(i).length(); j++) { // 각 단어 Character 순회
+//
+//                if(!map.containsKey(strings.get(i).charAt(j))) { // 맵에 없으면 넣기
+//                    map.put(strings.get(i).charAt(j), val--);
+//                }
+//
+//            }
+//        }
        for( Map.Entry<Character, Integer> entry : map.entrySet()){
            System.out.println(entry.getKey() + " : " + entry.getValue());
        }
