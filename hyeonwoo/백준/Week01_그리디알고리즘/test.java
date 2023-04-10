@@ -5,13 +5,29 @@ import java.util.Arrays;
 public class test {
 
     public static void main(String[] args) {
-        String s = "80875542";
+//        String s = "80875542";
+//
+//        char[] ch = s.toCharArray();
+//        Arrays.sort(ch);
+//
+//        for (int i = 0; i < ch.length; i++) {
+//            System.out.println(ch[i]);
+//        }
 
-        char[] ch = s.toCharArray();
-        Arrays.sort(ch);
+        int [] a = {1, 2, 3};
+        int[] b = a;
 
-        for (int i = 0; i < ch.length; i++) {
-            System.out.println(ch[i]);
+        a[0] = 10;
+        b[1] = 20;
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+        for (int i = 0; i < b.length; i++) {
+            System.out.println(b[i]);
         }
     }
+
+
+
+
 }

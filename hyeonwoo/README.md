@@ -1,41 +1,21 @@
-## 이번 주 과제
-> 백준
-- 단계별로 풀어보기 - 그리디 알고리즘
-- 
-> 프로그래머스
-- Lv.1 하루 2문제 
+##  매주 과제
+> 백준  단계별로 풀어보기 
 
-## 4/1 그리디 강의
+## 그리디 강의
 - 강의 - 거스름돈, 1될때까지, 곱하기 or 더하기, 큰 수의 법칙, 모험가길드
+- 
+## DFS / BFS
+> 재귀함수로 DFS를 구현하면 컴퓨터 시스템 동작 특성상 수행시간이 느려질 수 있음 <br/>
+> 많은 연산을 필요로 할 때 DFS(Stack) 보다는 BFS(Queue) 구현이 조금 더 빠르다.
+- 강의 - 그래프 방문 처리
 <br />
-<br />
 
-## 프로그래머스
-### LV1.로또최고최저 Map 순회 시  NullPointerException 방지
-    - test case 에 0, 1 이 올 경우도 대비하여 맵에 넣어준다
+<hr/>
 
-```java
-import java.util.HashMap;
-import java.util.Map;
-
-public class 로또최고최저 {
-    public static void main(String[] args) {
-        Map<Integer, Integer> rank = new HashMap<>(); // 맞춘 갯수 : 랭크
-        rank.put(6,1);
-        rank.put(5,2);
-        rank.put(4,3);
-        rank.put(3,4);
-        rank.put(2,5);
-        rank.put(1,6); // NullPointerException 때문에 
-        rank.put(0,6); // 2개 추가
-     }
-    }
-
-```
-### LV1.둘만의 암호 - 미결
-    - char 아스키 코드값으로 풀려하는데 z에서 인덱스 초과하는 부분..
-
-## 백준
+## 백준 못푼 문제 / 에러 처리
+### _1339_단어수학 - 미결
+    - 예제입력은 다 통과
+    - 예외 케이스를 모르겠음 
 ### _10610_30 런타임 에러 NumberFormatException - 해결
     - String 으로 출력해야 함 
     - 10의 배수가 아닐때에도 -1 을 출력하게 해야 함
@@ -43,4 +23,5 @@ public class 로또최고최저 {
     - test case 마다 배열 크기가 다르므로 예외처리 line 30
 ### _11047_동전0
     - 동전하나로 딱 나누어 떨어질때 예외 처리 line 24
-
+### _1931_회의실 배정
+    - Comparator
