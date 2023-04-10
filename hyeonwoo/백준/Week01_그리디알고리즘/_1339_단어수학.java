@@ -2,8 +2,6 @@ package 백준.Week01_그리디알고리즘;
 
 import java.util.*;
 
-public class _1339_단어수학 {
-
     /*민식이는 수학학원에서 단어 수학 문제를 푸는 숙제를 받았다.
 
     단어 수학 문제는 N개의 단어로 이루어져 있으며,
@@ -18,12 +16,14 @@ public class _1339_단어수학 {
 
     N개의 단어가 주어졌을 때,
     그 수의 합을 최대로 만드는 프로그램을 작성하시오.*/
-
+public class _1339_단어수학 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
         List<String> strings = new ArrayList<>();
+
 //        String[] strings = new String[n];
+
         for (int i = 0; i < n; i++) {
             strings.add(sc.next());
         }
@@ -38,18 +38,23 @@ public class _1339_단어수학 {
             }
         });
 
+
 //        for (int i = 0; i < strings.size(); i++) {
 //            System.out.println(strings.get(i));
 //        }
+
         Map<Character, Integer> map = new HashMap<>();
 
         int idx = strings.get(0).length(); // 제일 자릿수가 큰 문자열의 자릿수 ex. 5 자리면 5
 
+
         int a = 99999999*10;
+
         int val = 9;
         int result =0;
         while (idx >= 1){
             for (int i = 0; i < strings.size(); i++) {
+
 
                 if(idx > strings.get(i).length()) continue;
                 if(!map.containsKey(strings.get(i).charAt(strings.get(i).length()-idx))) {
@@ -58,6 +63,12 @@ public class _1339_단어수학 {
 //                result += Math.pow(map.get(strings.get(i).charAt(strings.get(i).length() - idx)),idx);
                 result += map.get(strings.get(i).charAt(strings.get(i).length()-idx)) * Math.pow(10,idx-1);
 //                if(idx == 0 && i == 0) break;
+
+                if(idx > strings.get(i).length()) continue;
+                if(!map.containsKey(strings.get(i).charAt(strings.get(i).length()-idx))) {
+                    map.put(strings.get(i).charAt(strings.get(i).length()-idx), val-- );
+                }
+                result += map.get(strings.get(i).charAt(strings.get(i).length()-idx)) * Math.pow(10,idx-1);
             }
             idx--;
 
