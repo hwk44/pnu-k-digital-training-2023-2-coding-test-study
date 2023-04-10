@@ -64,11 +64,11 @@ public class _1339_단어수학 {
                 result += map.get(strings.get(i).charAt(strings.get(i).length()-idx)) * Math.pow(10,idx-1);
 //                if(idx == 0 && i == 0) break;
 
-                if(idx > strings.get(i).length()) continue;
-                if(!map.containsKey(strings.get(i).charAt(strings.get(i).length()-idx))) {
-                    map.put(strings.get(i).charAt(strings.get(i).length()-idx), val-- );
-                }
-                result += map.get(strings.get(i).charAt(strings.get(i).length()-idx)) * Math.pow(10,idx-1);
+//                if(idx > strings.get(i).length()) continue;
+//                if(!map.containsKey(strings.get(i).charAt(strings.get(i).length()-idx))) {
+//                    map.put(strings.get(i).charAt(strings.get(i).length()-idx), val-- );
+//                }
+//                result += map.get(strings.get(i).charAt(strings.get(i).length()-idx)) * Math.pow(10,idx-1);
             }
             idx--;
 
