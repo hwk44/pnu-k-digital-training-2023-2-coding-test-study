@@ -14,9 +14,21 @@
 <hr/>
 
 ## 백준 못푼 문제 / 에러 처리
+
 ### _1339_단어수학 - 미결
     - 예제입력은 다 통과
-    - 예외 케이스를 모르겠음 
+    - 예외 케이스를 모르겠음
+
+### _1181_단어정렬 (정렬) - 중복 제거 / 정렬
+    -  Set으로 중복 제거 후 sort
+```java
+    Set<String> set = new HashSet<>();
+    set.add(data);
+    List<String> list = new ArrayList<>(set);
+        Collections.sort(list, new Comparator<String>(){
+            // Comparator 구현
+        }
+```
 ### _10610_30 런타임 에러 NumberFormatException - 해결
     - String 으로 출력해야 함 
     - 10의 배수가 아닐때에도 -1 을 출력하게 해야 함
