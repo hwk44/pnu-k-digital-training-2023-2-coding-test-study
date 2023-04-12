@@ -17,4 +17,3 @@ process.stdin.on('data', s => console.log((s + '')
 .split('\n')[1].split(' ')
 .map(e => +e).sort((l, r) => r - l)
 .reduce((a, c, i) => a + c * ++i)));
-
