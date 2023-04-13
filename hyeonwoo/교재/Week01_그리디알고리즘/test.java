@@ -1,6 +1,8 @@
 package 교재.Week01_그리디알고리즘;
 
 import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class test {
 
@@ -37,5 +39,14 @@ public class test {
         for (int i : list) {
             System.out.print(i + " ");
         }
+
+
+        String s= "abc";
+
+        Map<Character,Integer> map = new HashMap<>();
+
+        map.put(s.charAt(0),1);
+
+        System.out.println(map.get(s.charAt(1)));
     }
 }
