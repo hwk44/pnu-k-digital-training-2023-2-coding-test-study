@@ -4,21 +4,21 @@ import java.io.*;
 import java.util.*;
 
 public class _10816_숫자카드2 {
-    public static int binSearch(List<Integer> nums, int target){
+    public static int binSearch(List<Integer> nums, int target) {
         // 이진탐색
-        int start = 0 ;
-        int end = nums.size()-1;
-        int middle = (start+end)/2;
+        int start = 0;
+        int end = nums.size() - 1;
+        int middle = (start + end) / 2;
 
-        while (start<= end){
+        while (start <= end) {
             // 배열에 숫자가 있으면 1 반환
             if (nums.get(middle) == target) return 1;
-            if(nums.get(middle) < target) {
-                start = middle +1;
-                middle = (start+end)/2;
-            }else {
-                end = middle -1;
-                middle = (start+end)/2;
+            if (nums.get(middle) < target) {
+                start = middle + 1;
+                middle = (start + end) / 2;
+            } else {
+                end = middle - 1;
+                middle = (start + end) / 2;
             }
 
         }
@@ -46,15 +46,20 @@ public class _10816_숫자카드2 {
         Collections.sort(nums);
 
         for (int i = 0; i < targets.size(); i++) {
-            int cnt =0;
-//            while (nums.contains(targets.get(i))){
-                while(binSearch(nums,targets.get(i)) == 1) { // 있으면?
-                    cnt += 1; // 카운트 증가
-                    nums.remove(targets.get(i)); // List 에서 제거
-                }
+            int cnt = 0;
+//            while (binSearch(nums, targets.get(i)) == 1) { // 있으면?
+//                cnt += 1; // 카운트 증가
+//                nums.remove(targets.get(i)); // List 에서 제거
 //            }
-//            System.out.print(cnt + " ");
-            bt.write(cnt + " ");
+            int target = targets.get(i);
+            if (binSearch(nums, target) == 1) { // 있으면?
+                while (nums.contains(target)) {
+                    cnt += 1; // 카운트 증가
+                    nums.remove((Object) target); // List 에서 제거
+                }
+            }
+            if (i == targets.size() - 1) bt.write(String.valueOf(cnt));
+            else bt.write(cnt + " ");
         }
         bt.close();
     }

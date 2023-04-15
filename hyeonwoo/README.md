@@ -53,6 +53,16 @@ class set{
 
 ## 백준 못푼 문제 / 에러 처리
 
+### _18870_숫자압축 - 미결
+ + 시간초과
+ +  unsupportedoperationexception
+    +  List.copyOf(참조) 한 List 는 Collections.sort 안됨
+ + Integer VS Integer 는 equals 써야함
+   +  == 쓰면 참조값을 가져와서 다음 인덱스로 넘어감
+
+### _10816_숫자카드2 - 미결
+ + 시간초과
+
 ### _1339_단어수학 - 미결
     - 예제입력은 다 통과
     - 예외 케이스를 모르겠음 
