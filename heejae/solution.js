@@ -1,21 +1,26 @@
-function solution(key, bd) {
-    let ans = [0, 0];
-    for (let a of key) {
-      switch (a) {
-        case 'left': if (ans[0] > -(bd[0] - 1) / 2) ans[0] -= 1;
-          break;
-        case 'right': if (ans[0] < (bd[0] - 1) / 2) ans[0] += 1;
-          break;
-        case 'up': if (ans[1] < (bd[1] - 1) / 2) ans[1] += 1;
-          break;
-        case 'down': if (ans[1] > -(bd[1] - 1) / 2) ans[1] -= 1;
-          break;
-      }
+function solution(n) {
+    function fib(k){
+        if (k <= 2) return 1;
+        return fib(k-2) + fib(k-1);
     }
-    return ans;
+    return fib(n)%1234567;
   }
   
+  function solution(n) {
+    now=0;
+    preb= 1;
+    prebb= 0;
+    for (let i =2 ; i<=n; i++){
+      now = (preb+ prebb)%1234567
+      prebb = preb;
+      preb = now;
+    }
+    return now
+  }
+  [0,1,1,2,3,5,8,13]
+  
   console.log(solution(
-    ["left", "left", "left", "left", "right", "right", "right", "right"], [5, 5]
+    5
   ))
-  // "[2, 1]
+    // 5
+  

@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "pnu-k-digital-training-2023-2-coding-test-study",
+  "description": "<br/>",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bogol-E/pnu-k-digital-training-2023-2-coding-test-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bogol-E/pnu-k-digital-training-2023-2-coding-test-study/issues"
+  },
+  "homepage": "https://github.com/Bogol-E/pnu-k-digital-training-2023-2-coding-test-study#readme"
+}
