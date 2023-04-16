@@ -29,6 +29,7 @@ public class _10816_숫자카드2 {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bt = new BufferedWriter(new OutputStreamWriter(System.out));
 
+        // 가지고 있는 숫자 카드
         int n = Integer.parseInt(br.readLine());
         List<Integer> nums = new ArrayList<>();
         StringTokenizer st = new StringTokenizer(br.readLine());
@@ -36,6 +37,7 @@ public class _10816_숫자카드2 {
             nums.add(Integer.parseInt(st.nextToken()));
         }
 
+        // 비교해야할 숫자카드
         int m = Integer.parseInt(br.readLine());
         List<Integer> targets = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
@@ -44,22 +46,28 @@ public class _10816_숫자카드2 {
         }
 
         Collections.sort(nums);
+//        System.out.println(Collections.binarySearch(nums, 10));
 
+
+//         Collections.binarySearch
+//        for (int i = 0; i < targets.size(); i++) {
+//            System.out.println(Collections.binarySearch(nums, targets.get(i)));
+//        }
         for (int i = 0; i < targets.size(); i++) {
             int cnt = 0;
 //            while (binSearch(nums, targets.get(i)) == 1) { // 있으면?
 //                cnt += 1; // 카운트 증가
 //                nums.remove(targets.get(i)); // List 에서 제거
 //            }
-            int target = targets.get(i);
-            if (binSearch(nums, target) == 1) { // 있으면?
-                while (nums.contains(target)) {
+//            int target = targets.get(i);
+            if (binSearch(nums, targets.get(i)) == 1) { // 있으면?
+                while (nums.contains(targets.get(i))) {
                     cnt += 1; // 카운트 증가
-                    nums.remove((Object) target); // List 에서 제거
+                    nums.remove((Object) targets.get(i)); // List 에서 제거
                 }
             }
-            if (i == targets.size() - 1) bt.write(String.valueOf(cnt));
-            else bt.write(cnt + " ");
+            bt.write(cnt + " ");
+
         }
         bt.close();
     }

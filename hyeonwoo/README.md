@@ -27,6 +27,15 @@
      예제입력은 다 통과
      예외 케이스를 모르겠음
 
+<hr>
+
+### _18870_좌표압축 (정렬)
++ 시간초과 => 출력 시에  println 말고 BufferedWriter, StringBuilder 사용하면 됨
++  unsupportedoperationexception
+    +  List.copyOf(참조) 한 List 는 Collections.sort 안됨
++ Integer VS Integer 는 equals 써야함
+    +  == 쓰면 참조값을 가져와서 다음 인덱스로 넘어감
+
 ### _1181_단어정렬 (정렬) - 중복 제거 / 정렬
       Set으로 중복 제거 => List 형변환 => sort
 ```java
@@ -49,23 +58,6 @@ class set{
 }
 ```
 
-<hr/>
-
-## 백준 못푼 문제 / 에러 처리
-
-### _18870_숫자압축 - 미결
- + 시간초과
- +  unsupportedoperationexception
-    +  List.copyOf(참조) 한 List 는 Collections.sort 안됨
- + Integer VS Integer 는 equals 써야함
-   +  == 쓰면 참조값을 가져와서 다음 인덱스로 넘어감
-
-### _10816_숫자카드2 - 미결
- + 시간초과
-
-### _1339_단어수학 - 미결
-    - 예제입력은 다 통과
-    - 예외 케이스를 모르겠음 
 
 ### _10610_30 런타임 에러 NumberFormatException - 해결
     - String 으로 출력해야 함 
