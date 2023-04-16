@@ -7,3 +7,5 @@ let k = 'b'
 console.log(
     a.k(3)
 )
+
+Array.prototype.indexOf()
