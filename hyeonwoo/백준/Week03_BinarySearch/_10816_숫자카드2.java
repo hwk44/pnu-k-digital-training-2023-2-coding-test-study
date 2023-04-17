@@ -4,6 +4,8 @@ import java.io.*;
 import java.util.*;
 
 public class _10816_숫자카드2 {
+    // target 의 마지막 인덱스 +1  반환
+    // target 이 배열에 없으면 target 보다 큰, 가장 작은 수의 인덱스 반환
     public static int upperbound(List<Integer> nums, int target) {
         // 이진탐색
         int start = 0;
@@ -11,7 +13,7 @@ public class _10816_숫자카드2 {
 
         while (start < end) {
             int middle = (start + end) / 2;
-            // 배열에 숫자가 있으면 1 반환
+
             if ( nums.get(middle) <= target) { // 오른쪽부분
                 start = middle + 1 ; // 찾아도 다음값으로
             } else {
@@ -21,6 +23,8 @@ public class _10816_숫자카드2 {
         return end;
     }
 
+    // target 의 첫번째 인덱스 반환
+    // 배열에 값이 없으면 target 보다 큰, 제일 작은 수의 인덱스 반환
     public static int lowerbound(List<Integer> nums, int target) {
         // 이진탐색
         int start = 0;
@@ -35,7 +39,7 @@ public class _10816_숫자카드2 {
                 end = middle;
             }
         }
-        return start;
+        return end;
     }
 
     public static void main(String[] args) throws IOException {
@@ -70,12 +74,13 @@ public class _10816_숫자카드2 {
 //        }
         for (int i = 0; i < targets.size(); i++) {
 //            int cnt = 0;
-            System.out.println(upperbound(nums, targets.get(i)));
+//            System.out.print(upperbound(nums, targets.get(i)) - lowerbound(nums, targets.get(i)) + " ");
             System.out.println(lowerbound(nums, targets.get(i)));
-//            bt.write(cnt + " ");
+            System.out.println(upperbound(nums, targets.get(i)));
+//            bt.write(upperbound(nums, targets.get(i)) - lowerbound(nums, targets.get(i)) + " ");
 
         }
-//        bt.close();
+        bt.close();
     }
 }
 

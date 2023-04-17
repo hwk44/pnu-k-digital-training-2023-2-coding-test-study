@@ -21,7 +21,7 @@
 
 ## 백준 못푼 문제
 
-### _2805_ 나무자르기 (이진탐색) & _10816_숫자카드2
+### _2805_ 나무자르기 (이진탐색) & 
      upper/lower bound 구현해야함
 
 ### _1339_단어수학 - 미결
@@ -35,13 +35,16 @@
 
 <hr>
 
+### _10816_숫자카드2 (이진탐색)
+    upperbound 메서드는 target 보다 큰 수의 인덱스 반환
 
 ### _18870_좌표압축 (정렬)
-+ 시간초과 => 출력 시에  println 말고 BufferedWriter, StringBuilder 사용하면 됨
-+  unsupportedoperationexception
-    +  List.copyOf(참조) 한 List 는 Collections.sort 안됨
-+ Integer VS Integer 는 equals 써야함
-    +  == 쓰면 참조값을 가져와서 다음 인덱스로 넘어감
+    시간초과 => 출력 시에  println 말고 BufferedWriter, StringBuilder 사용하면 됨
+    unsupportedoperationexception
+      => List.copyOf(참조) 한 List 는 Collections.sort 안됨
+
+    Integer VS Integer 는 equals 써야함
+      =>  `==` 쓰면 참조값을 가져와서 다음 인덱스로 넘어감
 
 ### _1181_단어정렬 (정렬) - 중복 제거 / 정렬
       Set으로 중복 제거 => List 형변환 => sort

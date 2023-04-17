@@ -12,7 +12,7 @@ public class test {
 
         while (start < end) {
             int middle = (start + end) / 2;
-            // 배열에 숫자가 있으면 1 반환
+
             if ( nums.get(middle) <= target) { // 오른쪽부분
                 start = middle + 1 ; // 찾아도 다음값으로
             } else {
@@ -89,7 +89,6 @@ public class test {
         nums.add(42);
         nums.add(42);
         nums.add(42);
-        nums.add(46);
 //        System.out.println(Arrays.binarySearch(nums, 23)); // -2
 //        System.out.println(Arrays.binarySearch(nums, 27)); // -3
 //        System.out.println(Arrays.binarySearch(nums, 3)); // -3
