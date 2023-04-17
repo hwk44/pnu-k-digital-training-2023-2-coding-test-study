@@ -32,6 +32,9 @@
 
 ##   에러 처리
 
+<hr>
+
+
 ### _18870_좌표압축 (정렬)
 + 시간초과 => 출력 시에  println 말고 BufferedWriter, StringBuilder 사용하면 됨
 +  unsupportedoperationexception
