@@ -4,26 +4,38 @@ import java.io.*;
 import java.util.*;
 
 public class _10816_숫자카드2 {
-    public static int binSearch(List<Integer> nums, int target) {
+    public static int upperbound(List<Integer> nums, int target) {
         // 이진탐색
         int start = 0;
-        int end = nums.size() - 1;
+        int end = nums.size();
 
-
-
-
-        while (start <= end) {
-
+        while (start < end) {
             int middle = (start + end) / 2;
             // 배열에 숫자가 있으면 1 반환
-            if (nums.get(middle) == target) return 1;
-            if (nums.get(middle) < target) {
-                start = middle + 1;
+            if ( nums.get(middle) <= target) { // 오른쪽부분
+                start = middle + 1 ; // 찾아도 다음값으로
             } else {
-                end = middle - 1;
+                end = middle;
             }
         }
-        return 0;
+        return end;
+    }
+
+    public static int lowerbound(List<Integer> nums, int target) {
+        // 이진탐색
+        int start = 0;
+        int end = nums.size();
+
+        while (start < end) {
+            int middle = (start + end) / 2;
+            // 배열에 숫자가 있으면 1 반환
+            if (nums.get(middle) < target) { // 왼쪽부분
+                start = middle + 1; // 찾아도 다음값으로
+            } else {
+                end = middle;
+            }
+        }
+        return start;
     }
 
     public static void main(String[] args) throws IOException {
@@ -41,10 +53,6 @@ public class _10816_숫자카드2 {
 
 
         // 비교해야할 숫자카드
-
-
-        // 비교해야할 숫자카드
-
         int m = Integer.parseInt(br.readLine());
         List<Integer> targets = new ArrayList<>();
         st = new StringTokenizer(br.readLine());
@@ -61,23 +69,13 @@ public class _10816_숫자카드2 {
 //            System.out.println(Collections.binarySearch(nums, targets.get(i)));
 //        }
         for (int i = 0; i < targets.size(); i++) {
-            int cnt = 0;
-
-//            while (binSearch(nums, targets.get(i)) == 1) { // 있으면?
-//                cnt += 1; // 카운트 증가
-//                nums.remove(targets.get(i)); // List 에서 제거
-//            }
-//            int target = targets.get(i);
-            if (binSearch(nums, targets.get(i)) == 1) { // 있으면?
-                while (nums.contains(targets.get(i))) {
-                    cnt += 1; // 카운트 증가
-                    nums.remove((Object) targets.get(i)); // List 에서 제거
-                }
-            }
-            bt.write(cnt + " ");
+//            int cnt = 0;
+            System.out.println(upperbound(nums, targets.get(i)));
+            System.out.println(lowerbound(nums, targets.get(i)));
+//            bt.write(cnt + " ");
 
         }
-        bt.close();
+//        bt.close();
     }
 }
 
