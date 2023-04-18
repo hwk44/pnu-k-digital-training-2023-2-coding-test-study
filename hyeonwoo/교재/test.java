@@ -4,48 +4,30 @@ package 교재;
 import java.util.*;
 
 public class test {
+    public static int binsearch(int[] a ,int target){
+        int s = 0;
+        int e = a.length-1;
+        while(s <= e){
+            int mid = (s + e) /2;
+            if (target == a[mid]) return 1;// 있으면 1 반환
+            if(target < a[mid] ){ // 왼쪽 부분
+                e = mid - 1;
+            }else s = mid + 1;
+        }
+        return 0; // 없으면 0;
+    }
 
     public static void main(String[] args) {
-//        List<Integer> lst = new ArrayList<>();
-//        lst.add(4);
-//        lst.add(8);
-//        lst.add(0);
-//        lst.add(9);
-//        lst.add(9);
-//
-//        // list 오름차순 정렬
-//        Collections.sort(lst);
-//
-//        // 리스트를 셋으로 (중복 9 가 제거됨)
-//        Set<Integer> set1 = new HashSet<>(lst);
-//        for (int i : set1) {
-//            System.out.print(i + " ");
-//        }
-//        System.out.println();
-//        System.out.println("-".repeat(30));
-////        Collections.sort(set1); // Set 은 Collections.sort 안됨
-//
-//        // 셋을 다시 리스트로
-//        List<Integer> list = new ArrayList<>(set1);
-//
-//        for (int i : list) {
-//            System.out.print(i + " ");
-//        }
-//
-//        String s= "abc";
-//
-//        Map<Character,Integer> map = new HashMap<>();
-//
-//        map.put(s.charAt(0),1);
-//
-//        System.out.println(map.get(s.charAt(1)));
+        int[] n = { 0 , 2,5, 6, 7,8,9,19};
+        System.out.println(binsearch(n, 3));
+        System.out.println(binsearch(n, 5));
+        System.out.println(binsearch(n, 6));
+        System.out.println(binsearch(n, 7));
+        System.out.println(binsearch(n, 8));
+        System.out.println(binsearch(n, 9));
+        System.out.println(binsearch(n, 10));
+        System.out.println(binsearch(n, 11));
+        System.out.println(binsearch(n, 19));
 
-        double d1 = 1000000000;
-        double d2 = 1;
-
-        double d3 = d2/d1;
-        double d4 = d1 / 100;
-        System.out.println(d3);
-        System.out.println(d4);
     }
 }
