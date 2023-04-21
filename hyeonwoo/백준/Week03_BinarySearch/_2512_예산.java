@@ -29,16 +29,26 @@ public class _2512_예산 {
             int temp = Arrays.binarySearch(nums, mid);
             if(temp < 0) temp = (-temp) -1;
 
-            for (int i = temp; i < nums.length; i++) {
-                count +=  mid;
+
+            count += (nums.length - temp) * mid;
+
+            for (int i = 0; i < temp; i++) {
+                count +=  nums[i];
             }
             if(count <= sum){ //  부족하면? 더 키워야함 오른쪽 확인
-                s = mid;
+
+                if(s == (e-1)) {
+                    s = e;
+                    continue;
+                }
+                s = mid ;
                 if(answer <= mid) answer = mid;
+
             } else e = mid-1;
-            System.out.println(mid);
+//            System.out.println(mid);
+            if(s == e) break;
         }
-//        System.out.println(answer);
+        System.out.println(answer);
 
     }
 }
