@@ -44,7 +44,7 @@ public class _2805_나무자르기 {
 //            System.out.println(length[i]);
 //        }
 
-        int answer = 0;
+        int answer = 2_000_000_000;
         int lo = 0;
         int hi = tree[n-1]; // 제일 큰 나무 길이
         while(lo < hi) {
@@ -55,20 +55,33 @@ public class _2805_나무자르기 {
             if (Arrays.binarySearch(tree,mid) < 0) idx=Arrays.binarySearch(tree,mid)*(-1) -1;
             else idx=Arrays.binarySearch(tree,mid);
 
-            int cnt = 0;
+            long cnt = 0;
             for (int i = idx; i < tree.length; i++) {
                 cnt += tree[i] - mid;
             }
             
-            if(cnt >= m){   // 가져가야할 나무길이 이상이면
-                if(answer <= mid) {
-                    answer = mid; // 둘중 큰 값을 저장
-                }
-                lo = mid+1;// 뒤쪽(절단기 길이 늘려서) 절반 확인
-            }else hi = mid; // 나무 부족하면 앞쪽(절단기 길이 줄여서) 확인
+//            if(cnt >= m){   // 가져가야할 나무길이 이상이면
+//                if(answer < mid) {
+//                    answer = mid; // 둘중 큰 값을 저장
+//                }
+//                lo = mid+1;// 뒤쪽(절단기 길이 늘려서) 절반 확인
+//            }else hi = mid; // 나무 부족하면 앞쪽(절단기 길이 줄여서) 확인
 
 //            if()
+
+//            int cnt= 0;
+
+//            for (int i = mid; i < tree.length; i++) {
+//                cnt += tree[i] - mid;
+//            }
+            if(cnt >= m){ // 많거나 같아도 절단기 높이고 (상계)
+                lo = mid +1;
+            }else { // 적으면 절단기 내림
+                hi =mid;
+            }
+
+
         }
-        System.out.println(answer);
+        System.out.println(hi -1 );
     }
 }

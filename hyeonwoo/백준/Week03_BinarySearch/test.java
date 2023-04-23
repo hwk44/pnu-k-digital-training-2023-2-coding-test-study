@@ -8,5 +8,7 @@ public class test {
         double c = (double) b*100 / a;
         System.out.println((double)b/a);
         System.out.println((int)c);
+
+        System.out.println(3*a);
     }
 }

@@ -15,7 +15,7 @@ public class _10816_숫자카드2 {
             int middle = (start + end) / 2;
 
             if ( nums.get(middle) <= target) { // 오른쪽부분
-                start = middle + 1 ; // 찾아도 다음값으로
+                start = middle + 1 ; // 찾아도 다음값으로 (상계)
             } else {
                 end = middle;
             }
@@ -33,10 +33,10 @@ public class _10816_숫자카드2 {
         while (start < end) {
             int middle = (start + end) / 2;
             // 배열에 숫자가 있으면 1 반환
-            if (nums.get(middle) < target) { // 왼쪽부분
-                start = middle + 1; // 찾아도 다음값으로
+            if (nums.get(middle) < target) { // 오른쪽부분   
+                start = middle + 1; 
             } else {
-                end = middle;
+                end = middle; // 타깃을 찾아도 end => mid 로 가서 왼쪽 확인 (하계)
             }
         }
         return end;
