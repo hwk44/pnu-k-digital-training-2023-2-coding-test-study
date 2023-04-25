@@ -1,4 +1,4 @@
-package 백준.Week03_BinarySearch;
+package 백준.다이나믹프로그래밍;
 
 import java.io.BufferedReader;
 import java.io.IOException;
